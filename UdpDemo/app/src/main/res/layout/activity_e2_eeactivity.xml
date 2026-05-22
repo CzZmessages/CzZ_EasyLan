@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.E2EEActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="端到端加密模拟器"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp" />
+
+        <!-- 步骤1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="步骤1: 终端初始化"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_step1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. 终端生成密钥"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_terminal_fingerprint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="终端密钥: 未生成"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- 步骤2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="步骤2: APP扫码配对"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_step2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. APP扫码获取密钥"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_app_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="APP状态: 未配对"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- 步骤3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="步骤3: APP发送命令"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btn_cmd_on"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="开灯" />
+
+                <Button
+                    android:id="@+id/btn_cmd_off"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="关灯" />
+
+                <Button
+                    android:id="@+id/btn_cmd_bright"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="调亮" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_encrypted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加密密文: 未发送"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:background="#f0f0f0"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- 步骤4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="步骤4: 服务器转发"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_step4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. 模拟服务器转发"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_forward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="转发状态: 未转发"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- 步骤5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="步骤5: 终端验签执行"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_step5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. 终端解密并执行"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_decrypt_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解密结果: 未执行"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_execute_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="执行状态: 待执行"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- 攻击模拟 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="攻击模拟（可选）"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_attack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟服务器被黑 - 发送伪造命令"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#d32f2f" />
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="重置全部"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#ff9800" />
+        </LinearLayout>
+
+        <!-- 日志区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="操作日志"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <ScrollView
+                android:id="@+id/scroll_log"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="等待操作..."
+                    android:textSize="11sp"
+                    android:fontFamily="monospace" />
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

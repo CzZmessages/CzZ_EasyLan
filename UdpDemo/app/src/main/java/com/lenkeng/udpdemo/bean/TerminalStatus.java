@@ -1,0 +1,46 @@
+package com.lenkeng.udpdemo.bean;
+
+/**
+ * @ClassName: TerminalStatus
+ * @Author: chenpengchi
+ * @Date: 2026/3/16 0016
+ * @Description:
+ * *    ┏┓   ┏┓   <-摸摸脑袋，神兽会保佑你的代码
+ * *   ┏┛┻━━━┛┻┓
+ * *   ┃       ┃
+ * *   ┃   ━   ┃
+ * *   ┃ ┳┛ ┗┳ ┃
+ * *   ┃       ┃
+ * *   ┃   ┻   ┃
+ * *   ┃       ┃
+ * *   ┗━┓   ┏━┛
+ * *     ┃   ┃神兽保佑
+ * *     ┃   ┃代码无BUG！
+ * *     ┃   ┗━━━┓
+ * *     ┃       ┣┓
+ * *     ┃       ┏┛
+ * *     ┗┓┓┏━┳┓┏┛
+ * *      ┃┫┫ ┃┫┫
+ * *      ┗┻┛ ┗┻┛
+ * * ━━━━━━神兽出没━━━━━━
+ */
+public enum TerminalStatus {
+    // 基础状态
+    ONLINE_NET,//互联网在线
+    OFFLINE_NET,//互联网掉线
+    ONLINE_LAN,//局域网在线（仅代表再局域网）
+    OFFLINE_LAN,//局域网离线（即网口与wifi未连接任何网络）
+
+    // 工作状态
+    IDLE,//空闲
+    BUSY,//忙碌
+
+    // 资源相关状态
+    UPDATING,//资源更新中
+    SHARING,//共享中，作为源向其他设备提供文件
+
+    // 特殊情况
+    LOW_POWER,//低电量
+    STORAGE_FULL,//内存已满
+    ERROR;//设备异常
+}

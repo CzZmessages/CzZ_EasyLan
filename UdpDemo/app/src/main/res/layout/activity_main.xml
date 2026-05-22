@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/setting_Sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置为发送端"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input_ed_port_udp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="输入指定端口号:25447"
+        app:layout_constraintLeft_toRightOf="@id/setting_Sender"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/setting_Sender" />
+
+    <EditText
+        android:id="@+id/targetAddress_ed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="输入广播地址:255.255.255.255"
+        app:layout_constraintLeft_toLeftOf="@id/input_ed_port_udp"
+        app:layout_constraintRight_toRightOf="@id/input_ed_port_udp"
+        app:layout_constraintTop_toBottomOf="@id/input_ed_port_udp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/setting_Recipient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置为接收方"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/targetAddress_ed" />
+
+    <EditText
+        android:id="@+id/input_ed_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="输入发送的内容:hello"
+        app:layout_constraintLeft_toRightOf="@id/setting_Recipient"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/setting_Recipient" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_ed_message" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clear_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="清除日志"
+        app:layout_constraintRight_toLeftOf="@id/send_btn"
+        app:layout_constraintTop_toBottomOf="@id/input_ed_message" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/restart_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重置当前设备端"
+        app:layout_constraintRight_toLeftOf="@id/clear_log"
+        app:layout_constraintTop_toBottomOf="@id/input_ed_message" />
+
+    <TextView
+        android:id="@+id/send_msg_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="日志↓:"
+        app:layout_constraintBottom_toTopOf="@id/sc_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setting_Recipient" />
+    <!--  日志显示区域  -->
+    <ScrollView
+        android:id="@+id/sc_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/open_check_res"
+        app:layout_constraintTop_toBottomOf="@+id/send_btn">
+
+        <TextView
+            android:id="@+id/log_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#CDB6F4"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:textIsSelectable="true"
+            android:textSize="12sp" />
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/open_check_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启资源检查"
+        android:textSize="8sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/close_check_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭资源检查"
+        android:textSize="8sp"
+        app:layout_constraintLeft_toRightOf="@id/open_check_res"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清除数据库"
+        android:textSize="8sp"
+        app:layout_constraintLeft_toRightOf="@id/close_check_res"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/update_data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="获取打印结构体"
+        android:textSize="8sp"
+        android:id="@+id/get_gson"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
