@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.EasyLanActivity">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/portLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="端口号"
+        app:layout_constraintEnd_toStartOf="@+id/setPortBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/portInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="14445" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setPortBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置端口"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/portLayout"
+        app:layout_constraintTop_toTopOf="@+id/portLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/portLayout" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/broadcastLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="广播地址"
+        app:layout_constraintEnd_toStartOf="@+id/setBroadcastBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/broadcastInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="255.255.255.255" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setBroadcastBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置地址"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/broadcastLayout"
+        app:layout_constraintTop_toTopOf="@+id/broadcastLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/broadcastLayout" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/startReceiverBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="设置为接收方"
+        app:layout_constraintEnd_toStartOf="@+id/startSenderBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/broadcastLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/startSenderBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="设置为发送方"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startReceiverBtn"
+        app:layout_constraintTop_toTopOf="@+id/startReceiverBtn" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/messageLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="发送内容"
+        app:layout_constraintEnd_toStartOf="@+id/sendMsgBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startReceiverBtn">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/messageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello, World!" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sendMsgBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/messageLayout"
+        app:layout_constraintTop_toTopOf="@+id/messageLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/messageLayout" />
+    <TextView
+        android:id="@+id/logTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="日志信息："
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageLayout" />
+
+    <ScrollView
+        android:id="@+id/logScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="#F5F5F5"
+        android:padding="8dp"
+       app:layout_constraintBottom_toTopOf="@id/clearLogBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logTitle">
+
+        <TextView
+            android:id="@+id/logTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:textIsSelectable="true" />
+    </ScrollView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clearLogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="清除日志"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stopUdpBtn"
+        app:layout_constraintTop_toBottomOf="@+id/logScrollView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/stopUdpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止UDP"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logScrollView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
