@@ -124,6 +124,7 @@ public class TcpServerForIncomingConnectionsManager {
 //                                //这里直接使用回调出去，不然viewmodel会吃不消
 //                                onCallBack.onRfreshData(new InconimgMessage(ip, message));
 //                            }else {
+                            //思考老半天 还是调用队列  nmd....
                             messageQueue.offer(new InconimgMessage(ip, message));
 //                            }
 //
